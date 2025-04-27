@@ -4,7 +4,7 @@
 
 ## 功能特點
 
-- 🧮 根據年薪自動計算每秒、每分鐘、每小時的薪資
+- 🧮 根據月薪自動計算每秒、每分鐘、每小時的薪資
 - ⏱️ 實時顯示工作時間內的薪資累積
 - 💰 每秒在頁面隨機位置生成錢袋動畫，直觀感受收入增長
 - 💾 使用 Chrome 存儲功能保存您的設定
@@ -72,7 +72,3 @@
 3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
 4. 推送到分支 (`git push origin feature/AmazingFeature`)
 5. 開啟一個 Pull Request
-
-## 授權
-
-本專案採用 MIT 授權 - 詳情請參閱 [LICENSE](LICENSE) 文件。 
