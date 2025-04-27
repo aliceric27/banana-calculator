@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>薪資計算器</title>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: 'Microsoft JhengHei', sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .row {
+      display: flex;
+      gap: 10px;
+    }
+    .row .input-group {
+      flex: 1;
+    }
+    label {
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .slider-info {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+    .slider-value {
+      text-align: center;
+      font-weight: bold;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>薪資計算器設定</h2>
+    
+    <div class="input-group">
+      <label for="salary">當月薪資 (TWD):</label>
+      <input type="number" id="salary" placeholder="例如: 50000">
+    </div>
+    
+    <div class="input-group">
+      <label for="payday">發薪日 (1-31):</label>
+      <input type="number" id="payday" min="1" max="31" placeholder="例如: 5">
+    </div>
+    
+    <div class="input-group">
+      <label>工作時間:</label>
+      <div class="row">
+        <div class="input-group">
+          <label for="workStartHour">開始時間:</label>
+          <input type="number" id="workStartHour" min="0" max="23" placeholder="9" value="9">
+        </div>
+        <div class="input-group">
+          <label for="workEndHour">結束時間:</label>
+          <input type="number" id="workEndHour" min="0" max="23" placeholder="17" value="17">
+        </div>
+      </div>
+    </div>
+    
+    <div class="input-group">
+      <label for="maxCoins">畫面中最大金幣數量:</label>
+      <div class="row" style="align-items: center;">
+        <input type="number" id="maxCoinsInput" min="5" max="9999" value="20" style="flex: 1;">
+        <span id="maxCoinsValue" style="min-width: 45px; text-align: center;">20</span>
+      </div>
+      <div class="slider-container">
+        <input type="range" id="maxCoins" min="5" max="9999" value="20" step="5">
+        <div class="slider-info">
+          <span>少</span>
+          <span>多</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="input-group">
+      <button id="startBtn">開始計算</button>
+      <button id="stopBtn" style="background-color: #f44336; display: none;">停止計算</button>
+    </div>
+    
+    <div class="status" id="status">
+      尚未開始計算
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html> 
