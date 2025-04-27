@@ -93,18 +93,7 @@
             position: absolute;
             font-size: 2rem;
             z-index: 1;
-            animation: fadeOut 3s forwards;
             pointer-events: none;
-        }
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.5);
-            }
         }
     </style>
 </head>
@@ -196,11 +185,6 @@
                 moneyBag.style.top = `${randomY}px`;
                 
                 document.body.appendChild(moneyBag);
-                
-                // 動畫結束後移除元素
-                moneyBag.addEventListener('animationend', function() {
-                    moneyBag.remove();
-                });
             }
             
             function toggleCalculation() {
